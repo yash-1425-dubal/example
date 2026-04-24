@@ -1,3 +1,8 @@
+Convert it to RAW like this:
+
+https://raw.githubusercontent.com/yash-1425-dubal/example/main/example.txt
+
+
 python -c "import requests as r;print('AI Ready');
 while 1:
  q=input('You: ')
