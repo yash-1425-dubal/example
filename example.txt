@@ -1,1 +1,11 @@
+python -c "import requests as r;print('AI Ready');
+while 1:
+ q=input('You: ')
+ if q=='exit':break
+ j=r.post('https://openrouter.ai/api/v1/chat/completions',
+ headers={'Authorization':'Bearer YOUR_API_KEY','Content-Type':'application/json'},
+ json={'model':'openai/gpt-3.5-turbo','messages':[{'role':'user','content':q}]}).json()
+ print('AI:', j['choices'][0]['message']['content'])"
+
+
 hello yash
