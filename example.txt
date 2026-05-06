@@ -8,7 +8,7 @@ while 1:
  q=input('You: ')
  if q=='exit':break
  j=r.post('https://openrouter.ai/api/v1/chat/completions',
- headers={'Authorization':'Bearer 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','Content-Type':'application/json'},
+ headers={'Authorization':'Bearer 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','Content-Type':'application/json'},
  json={'model':'openai/gpt-3.5-turbo','messages':[{'role':'user','content':q}]}).json()
  print('AI:', j['choices'][0]['message']['content'])"
 
