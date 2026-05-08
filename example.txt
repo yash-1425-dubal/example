@@ -3,14 +3,19 @@ Convert it to RAW like this:
 https://raw.githubusercontent.com/yash-1425-dubal/example/main/example.txt
 
 
-python -c "import requests as r;print('AI Ready');
+python3 -c "import requests as r;print('AI Ready');
 while 1:
  q=input('You: ')
  if q=='exit':break
  j=r.post('https://openrouter.ai/api/v1/chat/completions',
  headers={'Authorization':'Bearer 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','Content-Type':'application/json'},
- json={'model':'openai/gpt-3.5-turbo','messages':[{'role':'user','content':q}]}).json()
- print('AI:', j['choices'][0]['message']['content'])"
+ json={'model':'openai/gpt-4o-mini','messages':[{'role':'user','content':q}]}).json()
+
+ if 'choices' in j:
+  print('AI:',j['choices'][0]['message']['content'])
+ else:
+  print('Error:',j)"
+
 
 
 hello yash
